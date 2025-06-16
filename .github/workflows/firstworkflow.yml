@@ -1,11 +1,24 @@
 name: git hub actions demo
 on: [push]
 jobs: 
+  MacOS-job:
+    runs-on: macos-lastest
+    steps: 
+    - name: get sw version
+      run: sw-vers
+  dependent-job:
+    runs-on: windows-latest
+    needs: MacOS-job
+    steps:
+      - name: print a string
+        run: Write-Output "print string in windows powershell"
+      
   Get-java-version:
     runs-on: ubuntu-latest
     steps: 
       - name: get java version
         run: java -version
+        
   Run-shell-commands:
     runs-on: ubuntu-latest
     steps: 
@@ -15,6 +28,7 @@ jobs:
         run: |
           node -v
           npm -v
+          
   Explore-github-actions:
     runs-on: ubuntu-latest
     steps:
