@@ -1,0 +1,20 @@
+name: test java
+on: [push]
+jobs:
+  test-java:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get java version
+        run: java -version
+      - name: maven version
+        run: maven -version
+      - name: compile java
+        run: javac Test.java
+      - name: execute java file
+        run: java Test
+        
+  
+
+
+
+
