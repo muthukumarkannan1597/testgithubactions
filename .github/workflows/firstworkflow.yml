@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: get java version
-        run: java -v
+        run: java -version
   Run-shell-commands:
     runs-on: ubuntu-latest
     steps: 
