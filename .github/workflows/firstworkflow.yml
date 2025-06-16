@@ -1,5 +1,5 @@
 name: git hub actions demo
-on: [push]
+on: workflow_dispatch
 jobs: 
   dependent-job:
     runs-on: windows-latest
