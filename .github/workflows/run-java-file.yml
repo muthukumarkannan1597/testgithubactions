@@ -8,6 +8,8 @@ jobs:
         run: java -version
       - name: maven version
         run: mvn -version
+      - name: checkout repo
+        uses: actions/checkout@v4
       - name: compile java
         run: javac Test.java
       - name: execute java file
