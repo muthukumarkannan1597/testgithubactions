@@ -7,3 +7,11 @@ jobs:
       - run : echo "the job was manually triggered by ${{github.event_name}} event."
       - run: echo "the job status is ${{job.status}}."
       - run: echo "the jos is running on ${{runner.os}}."
+      - run: echo "the branch is ${{github.ref}}  the repository is ${{github.repository}}."
+      - name: checkout Repository
+        uses: actions/checkout@v4
+      - run: echo "the repository ${{github.repository }} is now clonned at runner machine ${{runner.os}}. "
+      - run: "the workflow is now ready to test your code on runner"
+      - name: list files in the repository
+        run: ls ${{github.workspace }}
+      - run: echo "the job status is ${{job.status }}."
