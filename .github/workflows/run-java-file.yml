@@ -7,7 +7,7 @@ jobs:
       - name: get java version
         run: java -version
       - name: maven version
-        run: maven -version
+        run: mvn -version
       - name: compile java
         run: javac Test.java
       - name: execute java file
