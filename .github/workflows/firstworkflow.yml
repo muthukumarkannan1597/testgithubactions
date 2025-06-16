@@ -11,7 +11,7 @@ jobs:
       - name: checkout Repository
         uses: actions/checkout@v4
       - run: echo "the repository ${{github.repository }} is now clonned at runner machine ${{runner.os}}. "
-      - run: "the workflow is now ready to test your code on runner"
+      - run: echo "the workflow is now ready to test your code on runner"
       - name: list files in the repository
         run: ls ${{github.workspace }}
       - run: echo "the job status is ${{job.status }}."
