@@ -1,14 +1,9 @@
 name: git hub actions demo
 on: [push]
 jobs: 
-  MacOS-job:
-    runs-on: macos-lastest
-    steps: 
-    - name: get sw version
-      run: sw-vers
   dependent-job:
     runs-on: windows-latest
-    needs: MacOS-job
+    needs: Get-java-version
     steps:
       - name: print a string
         run: Write-Output "print string in windows powershell"
