@@ -1,6 +1,11 @@
 name: git hub actions demo
 on: [push]
 jobs: 
+  Get-java-version:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: get java version
+        run: java -v
   Run-shell-commands:
     runs-on: ubuntu-latest
     steps: 
