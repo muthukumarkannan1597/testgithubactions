@@ -1,6 +1,15 @@
 name: git hub actions demo
 on: [push]
 jobs: 
+  Run-shell-commands:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: single line command
+        run: echo "hello world"
+      - name: multi line command 
+        run: |
+          node -v
+          npm -v
   Explore-github-actions:
     runs-on: ubuntu-latest
     steps:
