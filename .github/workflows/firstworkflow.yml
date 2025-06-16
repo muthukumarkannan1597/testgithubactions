@@ -1,7 +1,7 @@
 name: git hub actions demo
-on: workflow_dispatch
+on: [push]
 jobs: 
-  Explore github actions
+  Explore-github-actions:
     runs-on: ubuntu-latest
     steps:
       - run : echo "the job was manually triggered by ${{github.event_name}} event."
