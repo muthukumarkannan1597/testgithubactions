@@ -1,0 +1,14 @@
+name: define env variable for single workflow
+on: workflow_dispatch
+jobs:
+  print-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print workflow var
+        run: echo "print workflow var"
+      - name: print Jobs var
+        run: echo "print Jobs var"
+      - name: print steps var
+        run: echo "print steps var"
+        
+  
