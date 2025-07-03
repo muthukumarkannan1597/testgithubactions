@@ -1,14 +1,22 @@
 name: define env variable for single workflow
 on: workflow_dispatch
+env: 
+  Greeting: Hi
 jobs:
   print-job:
     runs-on: ubuntu-latest
+    env: 
+      User: Muthu
     steps:
       - name: print workflow var
-        run: echo "print workflow var"
+        run: echo "print workflow var $Greeting"
       - name: print Jobs var
-        run: echo "print Jobs var"
+        run: echo "print Jobs var $User"
       - name: print steps var
-        run: echo "print steps var"
+        run: echo "print steps var $Question"
+        env: 
+          Question: How are you
+      - name: all together
+        run: echo $Greeting $User $Question
         
   
