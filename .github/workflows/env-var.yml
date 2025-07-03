@@ -14,9 +14,9 @@ jobs:
         run: echo "print Jobs var $User"
       - name: print steps var
         run: echo "print steps var $Question"
-        env: 
-          Question: How are you
       - name: all together
         run: echo $Greeting $User $Question
+        env: 
+          Question: How are you
         
   
