@@ -1,12 +1,27 @@
 name: github context to Log
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        required: true
+        type: environment
+        options:
+          - test
+          - stage
+          - prod
+      tags:
+        description: 'regression or functional'
+        required: false
+        type: boolean
+        
 jobs:
   Github_context_to_Log:
     env:
       en: stage
       phase: build      
     runs-on: ubuntu-latest
-    steps: 
+    steps:    
       - name: dump github context
         env: 
           github_context: ${{ toJson(github) }}
