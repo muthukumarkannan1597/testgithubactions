@@ -30,7 +30,7 @@ jobs:
       - name: dump runner context to log
         env: 
           runnerContext: ${{ toJson(runner) }}
-        run: echo '$runnerContext
+        run: echo '$runnerContext'
       - name: dump strategy context to log
         env:
           strategyContext: ${{ toJson(strategy) }}
