@@ -9,7 +9,7 @@ on:
         options:
           - test
           - stage
-          - prod
+          - dev
       tags:
         description: 'regression or functional'
         required: false
@@ -34,9 +34,13 @@ jobs:
     steps:    
       - name: dump workflow inputs to log
         run: |
-          echo "$inputs.environment"
-          echo "$inputs.tags"
-          echo "$inputs.logLevel"
+          echo "$environment"
+          echo "$tags"
+          echo "$loglevel"
+        env: 
+          environment: ${{ inputs.environment }}
+          tags: ${{ inputs.tags }}
+          loglevel: ${{ inputs.logLevel }}
         
       - name: dump github context
         env: 
