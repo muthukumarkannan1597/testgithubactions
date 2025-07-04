@@ -33,7 +33,7 @@ jobs:
         run: echo '$runnerContext
       - name: dump secrets context into log
         env: 
-          secretContext: ${{ toJson(secretContext) }}
+          secretContext: ${{ toJson(secret) }}
         run: echo "$secretContext"
       - name: dump strategy context to log
         env:
