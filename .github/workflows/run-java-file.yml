@@ -1,5 +1,5 @@
 name: test java
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
   test-java:
     runs-on: ubuntu-latest
