@@ -2,6 +2,9 @@ name: github context to Log
 on: workflow_dispatch
 jobs:
   Github_context_to_Log:
+    env:
+      en: stage
+      phase: build      
     runs-on: ubuntu-latest
     steps: 
       - name: dump github context
@@ -12,8 +15,31 @@ jobs:
         env:
           jobContext: ${{ toJson(job)}}
         run: echo "$jobContext"
-
-
+      - name: dump env context to log
+        env:
+          envConext: ${{ toJson(env) }}
+        run: echo "$envContext"
+      - name: dump jobs context to log
+        env: 
+          jobsContext: ${{ toJson(jobs) }}
+        run: echo "$jobsContext"
+      - name: dump steps context to log
+        env: 
+          stepsContext: ${{ toJson(steps) }}
+        run: echo "stepsContext"
+      - name: dump runner context to log
+        env: 
+          runnerContext: ${{ toJson(runner) }}
+        run: echo '$runnerContext
+      - name: dump secrets context into log
+        env: 
+          secretContext: ${{ toJson(secretContext) }}
+        run: echo "$secretContext"
+      - name: dump strategy context to log
+        env:
+          strategyContext: ${{ toJson(strategy) }}
+        run: echo "$strategContext"
+        
 
 
     
