@@ -8,5 +8,14 @@ jobs:
         env: 
           github_context: ${{ toJson(github) }}
         run: echo "$github_context"
+      - name: dump job context to log
+        env:
+          jobContext: ${{ toJson(job)}}
+        run: echo "$jobContext"
+
+
+
+
+    
     
   
