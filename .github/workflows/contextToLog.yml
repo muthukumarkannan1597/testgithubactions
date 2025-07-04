@@ -4,9 +4,9 @@ jobs:
   Github_context_to_Log:
     runs-on: ubuntu-latest
     steps: 
-      - name : dump github context
+      - name: dump github context
         env: 
-          github_context: ${{toJson(github)}}
+          github_context: ${{ toJson(github) }}
           run: echo "$github_context"
     
   
