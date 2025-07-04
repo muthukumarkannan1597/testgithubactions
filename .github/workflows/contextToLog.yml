@@ -19,10 +19,10 @@ jobs:
         env:
           envConext: ${{ toJson(env) }}
         run: echo "$envContext"
-      - name: dump jobs context to log
+      - name: dump matrix context to log
         env: 
-          jobsContext: ${{ toJson(jobs) }}
-        run: echo "$jobsContext"
+          matrixContext: ${{ toJson(matrix) }}
+        run: echo "$matrixContext"
       - name: dump steps context to log
         env: 
           stepsContext: ${{ toJson(steps) }}
