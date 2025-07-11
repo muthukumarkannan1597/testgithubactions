@@ -20,6 +20,17 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
         cache: maven
+    - name: Create directory and file with Maven command
+      shell: pwsh
+      run: |
+        $dir = "src/main/resources"
+        New-Item -ItemType Directory -Force -Path $dir
+          
+        $mvnCommand = "mvn clean install"
+        $filePath = "$dir/getCommand.txt"
+        Set-Content -Path $filePath -Value $mvnCommand
+          
+        Write-Host "File created at $filePath with content: $mvnCommand"
 
     - name: Run PowerShell commands
       shell: pwsh
