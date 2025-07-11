@@ -30,9 +30,9 @@ jobs:
         mvn -version
 
         Write-Host "Running Maven build..."
-        mvn clean install
+        mvn clean 
 
         Write-Output "Fetch Last run maven command"
-        (Get-History | Where-Object { $_.CommandLine -like "*mvn*" } )
+        Write-Output (Get-History | Where-Object { $_.CommandLine -like "*mvn*" } )
 
         
