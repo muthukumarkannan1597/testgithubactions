@@ -34,7 +34,7 @@ jobs:
         mvn clean 
 
         Write-Output "Fetch Get-History"
-        Get-History 
+        Write-Output Get-History 
         
         Write-Output "(Get-History | Where-Object { $_.CommandLine -like "*mvn*" } )"
         (Get-History | Where-Object { $_.CommandLine -like "*mvn*" } )
