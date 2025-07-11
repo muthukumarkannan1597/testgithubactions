@@ -1,0 +1,43 @@
+name: Java Maven Build with PowerShell
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Set up Maven
+      uses: s4u/setup-maven-action@v1
+      with:
+        maven-version: '3.9.6'
+
+    - name: Run PowerShell commands
+      shell: pwsh
+      run: |
+        Write-Host "Java version:"
+        java -version
+
+        Write-Host "Maven version:"
+        mvn -version
+
+        Write-Host "Running Maven build..."
+        mvn clean install
+
+        Fetch Last run maven command
+        (Get-History | Where-Object { $_.CommandLine -like "*mvn*" } | Select-Object -Last 1 -ExpandProperty CommandLine) | New-Item -Path "src/main/resources/getCommand.txt" -ItemType File -Force
+
+        
