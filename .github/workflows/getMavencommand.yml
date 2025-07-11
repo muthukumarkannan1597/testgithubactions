@@ -33,6 +33,6 @@ jobs:
         mvn clean install
 
         Write-Output "Fetch Last run maven command"
-        (Get-History | Where-Object { $_.CommandLine -like "*mvn*" } | Select-Object -Last 1 -ExpandProperty CommandLine) | New-Item -Path "src/main/resources/getCommand.txt" -ItemType File -Force
+        (Get-History | Where-Object { $_.CommandLine -like "*mvn*" } )
 
         
