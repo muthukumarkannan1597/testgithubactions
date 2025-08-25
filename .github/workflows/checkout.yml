@@ -1,8 +1,8 @@
 name: checkout action use
 on: workflow_dispatch
 jobs: 
-  checkout repo
-    runs-on:ubuuntu-latest
+  checkout-repo:
+    runs-on: ubuuntu-latest
     steps: 
       - name: list files before
         run: ls -a
