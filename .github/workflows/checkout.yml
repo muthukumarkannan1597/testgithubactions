@@ -6,6 +6,7 @@ jobs:
     steps: 
       - name: list files before
         run: ls -a
-        
+      - name: print test
+        run: echo "hi there"
       
     
