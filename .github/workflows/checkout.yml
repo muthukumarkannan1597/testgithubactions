@@ -2,7 +2,7 @@ name: checkout action use
 on: workflow_dispatch
 jobs: 
   checkout-repo:
-    runs-on: ubuuntu-latest
+    runs-on: ubuntu-latest
     steps: 
       - name: list files before
         run: ls -a
