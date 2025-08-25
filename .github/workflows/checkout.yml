@@ -4,9 +4,6 @@ jobs:
   checkout-repo:
     runs-on: ubuntu-latest
     steps: 
-      - name: list files before
-        run: ls -a
-      - name: print test
-        run: echo "hi there"
+      - run: echo $GITHUB_REF  
       
     
